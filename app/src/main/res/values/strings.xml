@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Helpful Hal</string>
+    <string name="textTitle">Yoo</string>
+    <string name="DefName"> New Task</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+    <string name="CreateTask">Create new task</string>
+</resources>
