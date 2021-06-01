@@ -12,11 +12,10 @@ import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.h1.TaskDB.TasksDb;
+import com.example.h1.TaskDB.ValuesDb;
 
 
 //TODO

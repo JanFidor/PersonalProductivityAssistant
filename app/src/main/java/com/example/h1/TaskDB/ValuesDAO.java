@@ -1,9 +1,9 @@
-package com.example.h1;
+package com.example.h1.TaskDB;
 
 import androidx.room.Dao;
 import androidx.room.Query;
 
-import com.example.h1.TaskDB.Task;
+import com.example.h1.TaskDB.Value;
 
 import java.util.List;
 
