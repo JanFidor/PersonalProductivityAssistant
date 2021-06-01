@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.example.h1.AssigmentActivity.TaskList;
 
 public class MainActivity extends AppCompatActivity {
+    // Main activity used to navigate to specific features
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setTheme(R.style.DarkTheme);
         setContentView(R.layout.activity_main);
 
+
+
+        // Button directing user to the Note oriented feature
         ImageView button_assignment = findViewById(R.id.assignment);
         button_assignment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        // Button directing user to the Pomodoro oriented feature
         ImageView button_pomodoro = findViewById(R.id.PomodoroActivity);
         button_pomodoro.setOnClickListener(new View.OnClickListener() {
             @Override

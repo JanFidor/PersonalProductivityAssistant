@@ -47,6 +47,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.NoteVi
             progress = view.findViewById(R.id.progressPercent);
             checked = view.findViewById(R.id.checkedTask);
 
+            // show current progress on task in respect to total time needed
             containerView.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
@@ -59,6 +60,8 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.NoteVi
                 }
             });
 
+
+            // pop up window for deleting task
             containerView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
@@ -69,37 +72,39 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.NoteVi
                 }
             });
 
-
+            // add an hour to tasks progress
             plus.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
                 public void onClick(View v) {
                     final Task current = (Task) containerView.getTag();
+
+                    // time spent can't exceed time needed to be spent
                     if (current.spent < current.total) {
                         TaskList.database.taskDAO().add(current.id);
                         int n = TaskList.database.taskDAO().getV(current.id);
                         int t = TaskList.database.taskDAO().getT(current.id);
                         progress.setText(ParseString.parseProgress(n, t));
-
-
-                        //bar.setProgress(TaskList.database.taskDAO().getV(current.id));
                     }
-                    //try{Thread.sleep(500);}catch(InterruptedException e){System.out.println(e);}
                     TaskList.adapter.reload();
                 }
             });
+
+            // remove an hour to tasks progress
             minus.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
                 public void onClick(View v) {
                     final Task current = (Task) containerView.getTag();
+
+                    // time spent can't be negative
                     if (current.spent > 0) {
+                        // update database and progress bar
                         TaskList.database.taskDAO().substract(current.id);
                         int n = TaskList.database.taskDAO().getV(current.id);
                         int t = TaskList.database.taskDAO().getT(current.id);
                         progress.setText(ParseString.parseProgress(n, t));
                     }
-                    //try{Thread.sleep(500);}catch(InterruptedException e){System.out.println(e);}
                     TaskList.adapter.reload();
                 }
             });
@@ -127,6 +132,8 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.NoteVi
         String p = ParseString.parseProgress(current.spent, current.total);
         holder.progress.setText(p);
 
+
+        // check if task is finished
         if (current.spent == current.total && current.spent != 0) {
             holder.progress.setVisibility(View.INVISIBLE);
             holder.plus.setVisibility(View.INVISIBLE);

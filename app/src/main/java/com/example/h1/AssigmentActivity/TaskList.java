@@ -35,10 +35,13 @@ public class TaskList extends AppCompatActivity {
         setContentView(R.layout.activity_task_list);
         setTheme(R.style.DarkTheme);
 
+
+        // creates local databse of tasks
         database = Room.databaseBuilder(getApplicationContext(), TasksDb.class, "notes")
                 .allowMainThreadQueries()
                 .build();
 
+        // creates backend for Recycler View
         recyclerView = findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(this);
         adapter = new TaskListAdapter();
@@ -48,9 +51,9 @@ public class TaskList extends AppCompatActivity {
 
         FloatingActionButton button = findViewById(R.id.add_note_button);
 
-        Context context = this;
 
-
+        // button handling creation of new tasks
+        //TODO custom factory class for AlertDialog windows
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,40 +61,40 @@ public class TaskList extends AppCompatActivity {
                 LayoutInflater inflater = TaskList.this.getLayoutInflater();
                 View dialogView = inflater.inflate(R.layout.window_popup, null);
 
-                final EditText editText = (EditText) dialogView.findViewById(R.id.edit_comment);
+                // editText for assigning name to a task
+                final EditText editText = dialogView.findViewById(R.id.edit_comment);
 
+                // choice of an amount of time needed to complete a task
                 final NumberPicker numbPick = dialogView.findViewById(R.id.edit_number);
                 //numP.setValue(1);
                 numbPick.setMinValue(1);
                 numbPick.setMaxValue(100);
                 numbPick.setWrapSelectorWheel(true);
 
-                Button button1 = (Button) dialogView.findViewById(R.id.buttonSubmit);
-                Button button2 = (Button) dialogView.findViewById(R.id.buttonCancel);
+                Button button1 = dialogView.findViewById(R.id.buttonSubmit);
+                Button button2 = dialogView.findViewById(R.id.buttonCancel);
 
+                // dismiss window
                 button2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         dialogBuilder.dismiss();
                     }
                 });
+
+                // confirm creating task
                 button1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // DO SOMETHINGS
                         Toast.makeText(view.getContext(), "Task created", Toast.LENGTH_SHORT).show();
-                        database.taskDAO().make(editText.getText().toString(), 0, numbPick.getValue());
+                        database.taskDAO().make(editText.getText().toString(), 0, numbPick.getValue()); // adds task to the database
                         dialogBuilder.dismiss();
-                        adapter.reload();
+                        adapter.reload();   // reloads RecyclerViews data set
                     }
                 });
 
                 dialogBuilder.setView(dialogView);
                 dialogBuilder.show();
-
-                //database.taskDAO().create();
-                //adapter.reload();
-
 
             }
         });

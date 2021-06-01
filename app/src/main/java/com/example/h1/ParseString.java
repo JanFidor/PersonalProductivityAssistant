@@ -6,6 +6,8 @@ import androidx.annotation.RequiresApi;
 
 public class ParseString {
 
+
+    // Create string as percentage of task completion
     @RequiresApi(api = Build.VERSION_CODES.O)
     static public String parseProgress(int current, int id){
         int p = Math.round( (float)current / (float)id * 100);
