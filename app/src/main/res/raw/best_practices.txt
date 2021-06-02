@@ -1,0 +1,9 @@
+naming convention:
+ic_activity_image_size
+
+color:
+dark_text -> #B3B3B3
+
+Recycler View images -> size: 24 SP
+Floating Action -> size: 48 SP
+Main Activity -> size: 128 SP

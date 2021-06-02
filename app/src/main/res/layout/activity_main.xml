@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/assignment"
-        android:src="@drawable/ic_assignment_big"
+        android:src="@drawable/ic_main_assignment_128"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/PomodoroActivity"
-        android:src="@drawable/ic_pomodoro_manager_128"
+        android:src="@drawable/ic_main_timer_128"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:padding="15dp"/>

@@ -20,7 +20,7 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:backgroundTint="@color/background_dark"
-        android:src="@drawable/ic_check_mark_48" />
+        android:src="@drawable/ic_tasks_checkmark_24" />
 
 
 </RelativeLayout>
