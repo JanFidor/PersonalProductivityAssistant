@@ -1,9 +1,9 @@
-package com.example.h1.TaskDB;
+package com.example.h1.PomodoroActivity.ValuesDB;
 
 import androidx.room.Dao;
 import androidx.room.Query;
 
-import com.example.h1.TaskDB.Value;
+import com.example.h1.PomodoroActivity.ValuesDB.Value;
 
 import java.util.List;
 

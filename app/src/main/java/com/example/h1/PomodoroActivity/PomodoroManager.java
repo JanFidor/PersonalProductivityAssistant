@@ -1,4 +1,4 @@
-package com.example.h1;
+package com.example.h1.PomodoroActivity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.h1.TaskDB.ValuesDb;
+import com.example.h1.R;
+import com.example.h1.PomodoroActivity.ValuesDB.ValuesDb;
 
 
 //TODO

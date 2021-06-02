@@ -1,4 +1,4 @@
-package com.example.h1.TaskDB;
+package com.example.h1.AssigmentActivity.TaskDB;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

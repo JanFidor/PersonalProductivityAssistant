@@ -1,4 +1,4 @@
-package com.example.h1.TaskDB;
+package com.example.h1.PomodoroActivity.ValuesDB;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

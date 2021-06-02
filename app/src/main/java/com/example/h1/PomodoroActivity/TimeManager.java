@@ -1,4 +1,4 @@
-package com.example.h1;
+package com.example.h1.PomodoroActivity;
 
 public class TimeManager {
 

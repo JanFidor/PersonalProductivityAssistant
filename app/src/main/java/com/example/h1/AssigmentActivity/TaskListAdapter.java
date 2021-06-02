@@ -17,9 +17,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.h1.AssigmentActivity.TaskDB.Task;
 import com.example.h1.ParseString;
 import com.example.h1.R;
-import com.example.h1.TaskDB.Task;
 
 import java.util.ArrayList;
 import java.util.List;
