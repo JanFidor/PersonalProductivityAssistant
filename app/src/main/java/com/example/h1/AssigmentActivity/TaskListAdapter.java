@@ -3,9 +3,11 @@ package com.example.h1.AssigmentActivity;
 
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -99,6 +101,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.NoteVi
 
                     // time spent can't be negative
                     if (current.spent > 0) {
+
                         // update database and progress bar
                         TaskList.database.taskDAO().substract(current.id);
                         int n = TaskList.database.taskDAO().getV(current.id);
@@ -135,6 +138,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.NoteVi
 
         // check if task is finished
         if (current.spent == current.total && current.spent != 0) {
+            // Log.e("ended", "p   " + current.contents);
             holder.progress.setVisibility(View.INVISIBLE);
             holder.plus.setVisibility(View.INVISIBLE);
             holder.minus.setVisibility(View.INVISIBLE);

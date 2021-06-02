@@ -153,11 +153,10 @@ public class PomodoroManager extends AppCompatActivity {
     protected void StopTheCount(boolean stop){
         if (stop) ValueDatabase.valuesDAO().updateN(0, "counting");
         //if (!stop) ValueDatabase.valuesDAO().updateN(1, "counting");
-        if (timer != null){
+        if (timer != null) {
             timer.cancel();
             timer = null;
         }
-        Log.e("start", "stopped1");
     }
 
 

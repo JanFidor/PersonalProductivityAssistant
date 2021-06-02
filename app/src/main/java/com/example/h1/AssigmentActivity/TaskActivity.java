@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -14,8 +15,8 @@ import com.example.h1.R;
 public class TaskActivity extends AppCompatActivity {
 
     private EditText editText;
-    private ImageView minusProgress;
-    private ImageView plusProgress;
+    private ImageView plusProgress, minusProgress;
+
 
     private TextView val;
     private EditText tot;

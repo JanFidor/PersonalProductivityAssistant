@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tastes">
+        <item>Any</item>
+        <item>Sweet</item>
+        <item>Sour</item>
+        <item>Salty</item>
+        <item>Umami</item>
+        <item>Bitter</item>
+    </string-array>
+
+    <string-array name="types">
+        <item>Any</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Supper</item>
+        <item>Drink</item>
+        <item>Snack</item>
+    </string-array>
+
+    <string-array name="times">
+        <item>0 </item>
+        <item>15 </item>
+        <item>30</item>
+        <item>46</item>
+        <item>60</item>
+        <item>&gt;60</item>
+    </string-array>
+
+
+    <string-array name="tastes_create">
+        <item>Sweet</item>
+        <item>Sour</item>
+        <item>Salty</item>
+        <item>Umami</item>
+        <item>Bitter</item>
+    </string-array>
+
+    <string-array name="types_create">
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Supper</item>
+        <item>Drink</item>
+        <item>Snack</item>
+    </string-array>
+</resources>

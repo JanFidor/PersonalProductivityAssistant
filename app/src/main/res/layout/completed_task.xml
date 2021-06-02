@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:backgroundTint="#121212"
+        android:backgroundTint="@color/background_dark"
         android:src="@drawable/ic_check_mark_48" />
 
 
