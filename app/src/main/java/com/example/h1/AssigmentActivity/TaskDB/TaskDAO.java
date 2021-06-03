@@ -7,7 +7,6 @@ import com.example.h1.AssigmentActivity.TaskDB.Task;
 
 import java.util.List;
 
-// TODO change getV and getT to select Task
 @Dao
 public interface TaskDAO {
     @Query("INSERT INTO notes (contents, spent, total) VALUES ('New note', 0, 1)")
