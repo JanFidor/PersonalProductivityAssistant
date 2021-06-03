@@ -5,24 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#121212"
+
     >
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recycler_view"
-        android:background="#121212"
-        android:backgroundTint="#121212"
+        android:background="@color/background_dark"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/add_note_button"
-        android:layout_gravity="bottom|right"
+        android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         app:srcCompat="@android:drawable/ic_input_add"
         android:backgroundTint="#03dac5"
-        android:tint="#121212"
+        android:tint="@color/background_dark"
         />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

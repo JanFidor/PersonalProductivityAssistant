@@ -6,19 +6,49 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
     <style name="DarkTheme" parent="AppTheme">
         <item name="textColor">#fafafa</item>
         <item name="primaryColor">#bb86fc</item>
         <item name="secondaryColor">#03dac5</item>
         <item name="bgColor">#121212</item>
     </style>
-
     <style name="LightTheme" parent="AppTheme">
         <item name="textColor">#fafafa</item>
         <item name="primaryColor">#606060</item>
         <item name="secondaryColor">#ffffff</item>
         <item name="bgColor">#ffffff</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.DoNotDim" parent="android:Theme">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- DropDown Menu Theme -->
+    <style name="spinnerTheme">
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@color/background_dark</item>
+    </style>
+
+    <!-- Default TextView Theme -->
+    <style name="textTheme">
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">5sp</item>
+    </style>
+
+    <!-- Default Button Theme -->
+    <style name="buttonTheme">
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
 </resources>

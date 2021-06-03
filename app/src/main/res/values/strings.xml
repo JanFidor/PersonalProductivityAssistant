@@ -1,8 +1,31 @@
 <resources>
     <string name="app_name">Helpful Hal</string>
-    <string name="textTitle">Yoo</string>
+
+    <!-- Strings for Task Manager -->
     <string name="DefName"> New Task</string>
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
     <string name="CreateTask">Create new task</string>
+
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings for Recipe Holder -->
+    <string name="ask_delete">Delete this recipe</string>
+        <!-- Attributes for filer -->
+        <string name="Filter">Filter</string>
+        <string name="Taste">Taste</string>
+        <string name="Type">Type</string>
+        <string name="Time">Time to make</string>
+
+
+        <!-- Default values of Text Fields-->
+        <string name="Name">Name</string>
+        <string name="Url">URL</string>
+
+        <!-- Names for Buttons -->
+        <string name="Add">Add</string>
+        <string name="Cancel">Cancel</string>
+        <string name="Confirm">Confirm</string>
+
 </resources>

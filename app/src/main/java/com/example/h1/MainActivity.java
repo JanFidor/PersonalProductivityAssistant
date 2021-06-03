@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.h1.AssigmentActivity.TaskList;
+import com.example.h1.PomodoroActivity.PomodoroManager;
 
 public class MainActivity extends AppCompatActivity {
     // Main activity used to navigate to specific features
