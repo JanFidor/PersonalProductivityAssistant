@@ -8,9 +8,7 @@
         android:id="@+id/task_row_text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        android:textColor="#FAFAFA"
+        android:theme="@style/Text"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:lines="1" />
@@ -19,9 +17,9 @@
         android:id="@+id/progressPercent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:theme="@style/Text"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:textColor="#FAFAFA"
         />
 
 
@@ -53,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:backgroundTint="#121212"
+        android:backgroundTint="@android:color/transparent"
         android:src="@drawable/ic_tasks_checkmark_24"
         android:visibility="invisible"/>
 

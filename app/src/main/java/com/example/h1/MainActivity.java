@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.DarkTheme);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity_main);
 
 
 

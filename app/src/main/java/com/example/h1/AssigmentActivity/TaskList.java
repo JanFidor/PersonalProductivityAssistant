@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,11 +32,11 @@ public class TaskList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_task_list);
+        setContentView(R.layout.tasks_activity_main);
         setTheme(R.style.DarkTheme);
 
 
-        // creates local databse of tasks
+        // creates local database of tasks
         database = Room.databaseBuilder(getApplicationContext(), TasksDb.class, "notes")
                 .allowMainThreadQueries()
                 .build();
@@ -60,7 +59,7 @@ public class TaskList extends AppCompatActivity {
             public void onClick(View v) {
                 final AlertDialog dialogBuilder = new AlertDialog.Builder(TaskList.this).create();
                 LayoutInflater inflater = TaskList.this.getLayoutInflater();
-                View dialogView = inflater.inflate(R.layout.window_popup, null);
+                View dialogView = inflater.inflate(R.layout.tasks_popup_create, null);
 
                 // editText for assigning name to a task
                 final EditText editText = dialogView.findViewById(R.id.edit_comment);

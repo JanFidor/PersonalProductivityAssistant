@@ -7,6 +7,7 @@ import com.example.h1.AssigmentActivity.TaskDB.Task;
 
 import java.util.List;
 
+// TODO change getV and getT to select Task
 @Dao
 public interface TaskDAO {
     @Query("INSERT INTO notes (contents, spent, total) VALUES ('New note', 0, 1)")
@@ -15,20 +16,14 @@ public interface TaskDAO {
     @Query("SELECT * FROM notes")
     List<Task> getAllNotes();
 
-    @Query("UPDATE notes SET contents = :contents, spent =:spent, total =:total WHERE id = :id")
-    void save(String contents, int spent, int total, int id);
-
     @Query("UPDATE notes SET spent = spent + 1 WHERE id = :id")
     void add(int id);
 
-    @Query("SELECT spent FROM notes WHERE id = :id")
-    int getV(int id);
-
-    @Query("SELECT total FROM notes WHERE id = :id")
-    int getT(int id);
+    @Query("SELECT * FROM notes WHERE id = :id")
+    Task getTask(int id);
 
     @Query("UPDATE notes SET spent = spent - 1 WHERE id = :id")
-    void substract(int id);
+    void subtract(int id);
 
     @Query("INSERT INTO notes (contents, spent, total) VALUES (:contents, :spent, :total)")
     void make(String contents, int spent,  int total);
