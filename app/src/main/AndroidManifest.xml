@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PomodoroActivity.PomodoroManager"/>
         <activity android:name=".AssigmentActivity.TaskList" />
+        <activity android:name=".RecipeActivity.RecipeList" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardUseCompatPadding="true"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_dark"
+        android:padding="10dp"
+        >
+
+        <EditText
+            android:id="@+id/recipe_make_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:inputType="text"
+            android:padding="5sp"
+            android:hint="@string/Name"
+            android:textSize="20sp"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/text_dark"
+            />
+
+        <EditText
+            android:id="@+id/recipe_make_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/recipe_make_name"
+            android:layout_centerHorizontal="true"
+            android:inputType="textUri"
+            android:padding="5sp"
+            android:hint="@string/Url"
+            android:textSize="20sp"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/text_dark"
+            />
+
+        <TextView
+            android:id="@+id/TasteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recipe_make_url"
+            android:layout_alignParentStart="true"
+            android:theme="@style/Text"
+            android:text="@string/Taste"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_taste"
+            android:layout_width="77dp"
+
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recipe_make_url"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="21dp"
+            android:background="@android:color/transparent"
+            android:dropDownWidth="70sp"
+            android:entries="@array/tastes_create"
+            android:gravity="center_horizontal"
+            android:padding="5sp"
+            android:theme="@style/Dropdown" />
+
+        <TextView
+            android:id="@+id/TypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TasteText"
+            android:layout_alignParentStart="true"
+            android:theme="@style/Text"
+            android:text="@string/Type"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_type"
+            android:layout_width="76dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/spinner_taste"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="21dp"
+            android:background="@android:color/transparent"
+            android:dropDownWidth="70sp"
+            android:entries="@array/types_create"
+            android:gravity="center_horizontal"
+            android:theme="@style/Dropdown" />
+
+        <TextView
+            android:id="@+id/time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TypeText"
+            android:layout_alignParentStart="true"
+            android:theme="@style/Text"
+            android:text="@string/Time"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_time"
+            android:layout_width="76dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner_type"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-1dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:dropDownWidth="70sp"
+            android:entries="@array/times"
+
+            android:padding="5sp"
+            android:theme="@style/Dropdown" />
+
+        <Button
+            android:id="@+id/recipe_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_text"
+            android:layout_alignParentStart="true"
+            android:theme="@style/Text"
+            android:text="@string/Add"
+            android:background="@android:color/transparent"
+            />
+
+        <Button
+            android:id="@+id/recipe_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_marginEnd="10sp"
+            android:layout_below="@+id/spinner_time"
+            android:layout_alignParentEnd="true"
+            android:theme="@style/Button"
+            android:text="@string/Cancel"
+            android:background="@android:color/transparent"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

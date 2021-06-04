@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.example.h1.AssigmentActivity.TaskList;
 import com.example.h1.PomodoroActivity.PomodoroManager;
+import com.example.h1.RecipeActivity.RecipeList;
 
 public class MainActivity extends AppCompatActivity {
     // Main activity used to navigate to specific features
@@ -22,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Button directing user to the Note oriented feature
-        ImageView button_assignment = findViewById(R.id.assignment);
-        button_assignment.setOnClickListener(new View.OnClickListener() {
+        ImageView button_assignments = findViewById(R.id.AssignmentActivity);
+        button_assignments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), TaskList.class);
@@ -38,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), PomodoroManager.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
+        // Button directing user to the Recipe oriented feature
+        ImageView button_resipes = findViewById(R.id.RecipesActivity);
+        button_resipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), RecipeList.class);
                 v.getContext().startActivity(intent);
             }
         });

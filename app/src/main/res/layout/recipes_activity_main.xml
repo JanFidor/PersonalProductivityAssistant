@@ -4,46 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/background_dark"
-    >
+    tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:theme="@style/AppTheme.AppBarOverlay"
         >
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical">
             <TextView
-                android:id="@+id/settings_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:theme="@style/Text"
-                android:text="Task Manager"/>
-        </LinearLayout>
+                android:layout_alignParentStart="true"
+                android:text="Recipes Manager"/>
+
+            <ImageButton
+                android:id="@+id/settings_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_recipes_filter_36"/>
+        </RelativeLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_view"
-        android:background="@color/background_dark"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@color/background_dark"
         />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/add_note_button"
         android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
+        android:layout_margin="16sp"
         app:srcCompat="@android:drawable/ic_input_add"
-        android:backgroundTint="#03dac5"
-        android:tint="@color/background_dark"
-        />
+        android:tint="@color/background_dark"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

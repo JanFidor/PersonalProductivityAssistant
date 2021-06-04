@@ -6,24 +6,61 @@
     android:layout_height="match_parent"
     android:id="@+id/layout1"
     tools:context=".MainActivity"
-    android:theme="@style/Background">
+    android:theme="@style/AppTheme.NoActionBar"
+    android:background="@color/background_dark">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/main_bar"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/settings_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:theme="@style/Text"
+                android:text="@string/app_name"/>
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/AssignmentActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_bar"
+        android:layout_alignParentStart="true"
+        android:paddingHorizontal="35dp"
+        android:paddingVertical="10sp"
+        android:src="@drawable/ic_main_assignment_128"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/PomodoroActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_bar"
+        android:layout_alignParentEnd="true"
+        android:paddingHorizontal="35dp"
+        android:paddingVertical="10sp"
+        android:src="@drawable/ic_main_timer_128" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/assignment"
-        android:src="@drawable/ic_main_assignment_128"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/RecipesActivity"
+        android:src="@drawable/ic_main_recipes_128"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:padding="10dp"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/PomodoroActivity"
-        android:src="@drawable/ic_main_timer_128"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:padding="15dp"/>
+        android:layout_below="@id/AssignmentActivity"
+        android:paddingHorizontal="35dp"
+        android:paddingVertical="10sp"/>
 
 </RelativeLayout>
