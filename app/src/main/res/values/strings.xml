@@ -1,12 +1,14 @@
 <resources>
     <string name="app_name">Helpful Hal</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
 
     <!-- Strings for Task Manager -->
-    <string name="DefName"> New Task</string>
+    <string name="DefName">New Task</string>
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
     <string name="CreateTask">Create new task</string>
-
+    <string name="DeleteConfirmation">Do you want to remove this task?</string>
 
     <string name="action_settings">Settings</string>
 

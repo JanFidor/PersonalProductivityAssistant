@@ -8,9 +8,7 @@
         android:id="@+id/task_row_text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        android:textColor="#FAFAFA"
+        android:theme="@style/Text"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:lines="1" />
@@ -19,9 +17,9 @@
         android:id="@+id/progressPercent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:theme="@style/Text"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:textColor="#FAFAFA"
         />
 
 
@@ -33,7 +31,7 @@
         android:layout_centerVertical="true"
         android:clickable="true"
         android:backgroundTint="@android:color/transparent"
-        android:src="@drawable/ic_baseline_add_24"
+        android:src="@drawable/ic_tasks_plus_24"
         android:paddingVertical="24sp"
        />
 
@@ -44,7 +42,7 @@
         android:layout_toLeftOf="@+id/addV"
         android:layout_marginLeft="-74dp"
         android:backgroundTint="@android:color/transparent"
-        android:src="@drawable/ic_baseline_remove_24"
+        android:src="@drawable/ic_tasks_minus_24"
         android:paddingVertical="24sp"/>
 
     <ImageView
@@ -53,8 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:backgroundTint="#121212"
-        android:src="@drawable/ic_check_mark_48"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/ic_tasks_checkmark_24"
         android:visibility="invisible"/>
 
 

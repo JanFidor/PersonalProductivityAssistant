@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardUseCompatPadding="true"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_dark"
+            android:padding="10dp"
+            >
+
+            <EditText
+                android:id="@+id/recipe_make_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:inputType="text"
+                android:padding="5sp"
+                android:hint="@string/Name"
+                android:theme="@style/Text"
+                />
+
+            <EditText
+                android:id="@+id/recipe_make_url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_below="@+id/recipe_make_name"
+                android:layout_centerHorizontal="true"
+                android:inputType="textUri"
+                android:padding="5sp"
+                android:hint="@string/Url"
+                android:theme="@style/Text"
+                />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recipe_make_url"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:id="@+id/first_row"
+            >
+            <TextView
+                android:id="@+id/TasteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:theme="@style/Text"
+                android:text="@string/Taste"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_taste"
+                android:layout_width="77dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20sp"
+                android:background="@android:color/transparent"
+                android:dropDownWidth="70sp"
+                android:entries="@array/tastes_create"
+                android:gravity="center_horizontal"
+                android:padding="5sp"
+                android:theme="@style/Dropdown" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:id="@+id/second_row"
+            android:layout_below="@+id/first_row"
+            >
+            <TextView
+                android:id="@+id/TypeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:theme="@style/Text"
+                android:text="@string/Type"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_type"
+                android:layout_width="76dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20sp"
+                android:background="@android:color/transparent"
+                android:dropDownWidth="70sp"
+                android:entries="@array/types_create"
+                android:gravity="center_horizontal"
+                android:theme="@style/Dropdown" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:id="@+id/third_row"
+            android:layout_below="@+id/second_row"
+            >
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:theme="@style/Text"
+                android:text="@string/Time"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_time"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20sp"
+                android:background="@android:color/transparent"
+                android:dropDownWidth="70sp"
+                android:entries="@array/times"
+                android:padding="5sp"
+                android:theme="@style/Dropdown" />
+        </RelativeLayout>
+            <Button
+                android:id="@+id/recipe_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/third_row"
+                android:theme="@style/Button"
+                android:text="@string/Add"
+                />
+            <Button
+                android:id="@+id/recipe_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/third_row"
+                android:layout_alignParentEnd="true"
+                android:theme="@style/Button"
+                android:text="@string/Cancel"
+
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

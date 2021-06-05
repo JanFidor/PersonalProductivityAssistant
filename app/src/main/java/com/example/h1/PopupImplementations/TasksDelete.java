@@ -1,4 +1,4 @@
-package com.example.h1.AssigmentActivity;
+package com.example.h1.PopupImplementations;
 
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -8,16 +8,12 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
+import com.example.h1.AssigmentActivity.TaskList;
 import com.example.h1.R;
 
-public class ShowPopUp {
-
-    //PopupWindow display method
-
-    public void showPopupWindow(final View view, final int id) {    //deleted final from view
-
-
-        //Create a View object yourself through inflater
+public class TasksDelete implements PopupInterface {
+    @Override
+    public void create(final View view, final int id){
         LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.tasks_popup_delete, null);
 
@@ -25,11 +21,9 @@ public class ShowPopUp {
         int width = LinearLayout.LayoutParams.MATCH_PARENT;
         int height = LinearLayout.LayoutParams.MATCH_PARENT;
 
-        //Make Inactive Items Outside Of PopupWindow
-        boolean focusable = true;
-
+        //Make Inactive Items Outside Of PopupWindow -> focusable: true
         //Create a window with our parameters, deleted final
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, true);
 
 
 
@@ -65,5 +59,4 @@ public class ShowPopUp {
             }
         });
     }
-
 }

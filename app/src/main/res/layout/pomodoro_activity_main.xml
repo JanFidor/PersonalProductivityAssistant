@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".PomodoroActivity.PomodoroManager"
     android:keepScreenOn="true"
-    android:background="#121212">
+    android:background="@color/background_dark">
 
     <TextView
         android:id="@+id/CountDown"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:clickable="true"
-        android:textColor="#fcfcfc"
+        android:textColor="@color/text_dark"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

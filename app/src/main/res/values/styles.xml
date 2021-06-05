@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -29,26 +29,45 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
-    <!-- DropDown Menu Theme -->
-    <style name="spinnerTheme">
-        <item name="android:textColor">@color/text_dark</item>
+    <!-- Default Button Theme -->
+    <style name="Background">
+        <item name="android:layout_margin">5sp</item>
+        <item name="android:background">@color/background_dark</item>
+    </style>
+
+    <!-- Spinner Menu Theme -->
+    <style name="Spinner">
+        <item name="android:textColorPrimary">@color/text_dark</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
         <item name="android:textSize">18sp</item>
         <item name="android:background">@color/background_dark</item>
     </style>
 
-    <!-- Default TextView Theme -->
-    <style name="textTheme">
+    <!-- DropDown Menu Theme -->
+    <style name="Dropdown">
         <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@color/background_dark</item>
+    </style>
+
+
+    <!-- Default TextView Theme -->
+    <style name="Text">
+
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textColorHint">@color/text_dark</item>
+        <item name="android:textColorPrimary">@color/text_dark</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
         <item name="android:textSize">18sp</item>
         <item name="android:background">@android:color/transparent</item>
-        <item name="android:padding">5sp</item>
     </style>
 
     <!-- Default Button Theme -->
-    <style name="buttonTheme">
+    <style name="Button">
         <item name="android:textColor">@color/text_dark</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundTint">@color/background_dark</item>
     </style>
 
 </resources>

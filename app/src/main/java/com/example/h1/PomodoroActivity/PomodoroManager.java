@@ -33,12 +33,10 @@ public class PomodoroManager extends AppCompatActivity {
 
     public PomodoroManager() {
     }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pomodoro_manager);
+        setContentView(R.layout.pomodoro_activity_main);
         setTheme(R.style.DarkTheme);
 
         // Creation of database holding information used by Pomodoro alarm
@@ -60,7 +58,7 @@ public class PomodoroManager extends AppCompatActivity {
         ValueDatabase.valuesDAO().make("timeLeft", time);   // tracks time left in the PA
         ValueDatabase.valuesDAO().make("counting", b);      // tracks whether PA was running in the background
         ValueDatabase.valuesDAO().make("TotalSets", 0); // tracks the amount of finished Pomodoro sets
-        ValueDatabase.valuesDAO().make("timeStopped", TimeManager.getCurrent()); // tracks when the app was minimalized to calculate time passed
+        ValueDatabase.valuesDAO().make("timeStopped", System.currentTimeMillis()); // tracks when the app was minimalized to calculate time passed
 
 
         // creates PA timer with according time
@@ -107,8 +105,9 @@ public class PomodoroManager extends AppCompatActivity {
 
 
     // actions executed every time PA feature is opened
-    @RequiresApi(api = Build.VERSION_CODES.O)
+    //@RequiresApi(api = Build.VERSION_CODES.O)
     protected void onResume() {
+
         super.onResume();
         TextView countDown = findViewById(R.id.CountDown);
         // getting time left before PA window was closed from database
@@ -116,7 +115,7 @@ public class PomodoroManager extends AppCompatActivity {
 
         // calculating how much time elapsed since closing window and how much time was left on timer
         long timeStopped = ValueDatabase.valuesDAO().getValue("timeStopped");
-        long delta = TimeManager.timeChange(timeStopped);
+        long delta = deltaTime(timeStopped);
 
         long counting = ValueDatabase.valuesDAO().getValue("counting");
         // checks if the change in time affected timer -> only if it was counting when closed
@@ -136,8 +135,8 @@ public class PomodoroManager extends AppCompatActivity {
         StopTheCount(false);
 
         //updates information when the app was closed
-        ValueDatabase.valuesDAO().updateN(TimeManager.getCurrent(), "timeStopped");
-        //ValueDatabase.close(); TODO
+        ValueDatabase.valuesDAO().updateN(System.currentTimeMillis(), "timeStopped");
+        ValueDatabase.close();
     }
 
     // starts the timer countdown
@@ -162,12 +161,13 @@ public class PomodoroManager extends AppCompatActivity {
 
     // formats amount of miliseconds left to "minutes : seconds" string with forward 0s
     @SuppressLint("DefaultLocale")
-    @RequiresApi(api = Build.VERSION_CODES.O)
+    //@RequiresApi(api = Build.VERSION_CODES.O)
     protected String edited(long time){
 
         minutes = time / (60 * 1000);
         seconds = (time / 1000) % 60;
-        return  String.join(" ", String.format("%02d", minutes), ":", String.format("%02d", seconds));    //force 0 to show as 00
+        return String.format("%02d", minutes) + " : " + String.format("%02d", seconds);
+        //return  String.join(" ", String.format("%02d", minutes), ":", String.format("%02d", seconds));    //force 0 to show as 00
     }
 
 
@@ -206,5 +206,10 @@ public class PomodoroManager extends AppCompatActivity {
                 //TODO  make vibrations till restarted
             }
         };
+    }
+
+
+    static public long deltaTime(long timeLeft){
+        return System.currentTimeMillis() - timeLeft;
     }
 }

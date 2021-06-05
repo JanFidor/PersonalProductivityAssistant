@@ -1,0 +1,12 @@
+naming convention:
+
+    drawable: ic_activity_image_size
+    layout: activity_type_purpose
+    Java: ActivityPurpose
+
+color:
+    dark_text -> #B3B3B3
+
+Recycler View images -> size: 24 SP
+Floating Action -> default android
+Main Activity -> size: 128 SP

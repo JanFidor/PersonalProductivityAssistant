@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/recipe_row"
+    android:background="@color/background_dark"
+    android:layout_gravity="center_vertical"
+    android:layout_marginBottom="10sp">
+    <Button
+        android:id="@+id/recipe_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:clickable="false"
+        android:background="@android:color/transparent"
+        android:theme="@style/Button"
+        />
+    <Button
+        android:id="@+id/recipe_time_to_make"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:clickable="false"
+        android:theme="@style/Button"
+        android:background="@android:color/transparent"
+        />
+
+</RelativeLayout>
