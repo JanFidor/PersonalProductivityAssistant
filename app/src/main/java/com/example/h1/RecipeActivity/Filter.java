@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Filter {
+    /*
     public static List<Recipe> filter(List<Recipe> database, int taste, int type) {
 
         List<Recipe> filtered = new ArrayList<>();
@@ -17,8 +18,23 @@ public class Filter {
              }
         }
 
-        return filtered;
-    }
+        return filtered;*/
+        public static List<Recipe> filter(List<Recipe> database, int taste, int type) {
+            List<Recipe> filtered = new ArrayList<>();
+            if (taste == 0 || type == 0){
+                return filtered;
+            }
+
+            for (Recipe r : database) {
+                //boolean Taste =  taste == 0 || taste == r.taste;
+                //boolean Type =  type == 0 || type == r.type;
+                if (taste == r.taste && type == r.type) {
+                    filtered.add(r);
+                }
+            }
+
+            return filtered;
+        }
 
     /*
     public static List<Recipe> filter(List<Recipe> database) {
