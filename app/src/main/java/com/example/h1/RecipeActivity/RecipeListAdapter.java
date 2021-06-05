@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.h1.PopupFactory;
 import com.example.h1.R;
 import com.example.h1.RecipeActivity.RecipeDB.Recipe;
 
@@ -42,28 +43,11 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
             containerView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    final AlertDialog dialogBuilder = new AlertDialog.Builder(containerView.getContext()).create();
-                    LayoutInflater inflater = (LayoutInflater) containerView.getContext().getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-                    View dialogView = inflater.inflate(R.layout.recipes_popup_delete, null);
+                    // Recipes Delete
+                    Recipe recipe = (Recipe) containerView.getTag();
+                    PopupFactory popupFactory = new PopupFactory();
+                    popupFactory.getPopup("RecipesDelete", v, recipe.id);
 
-
-                    dialogBuilder.setView(dialogView);
-                    dialogBuilder.getWindow().getDecorView().setBackgroundResource(android.R.color.transparent);
-                    dialogBuilder.getWindow().setDimAmount(0.0f);
-
-                    verifyDelete = dialogView.findViewById(R.id.recipe_remove);
-                    //deleting recipe from database
-                    verifyDelete.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Recipe recipe = (Recipe) containerView.getTag();
-                            RecipeList.database.recipeDAO().delete(recipe.id);
-                            RecipeList.adapter.reload(RecipeList.Taste, RecipeList.Type);
-                            dialogBuilder.dismiss();
-                        }
-                    });
-
-                    dialogBuilder.show();
                     return true;
                 }
             });
@@ -72,14 +56,6 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
                 @Override
                 public void onClick(View v) {
                     Recipe recipe = (Recipe) containerView.getTag();
-                    //Log.e("browse", "goes");
-                    /*
-                     Intent i = new Intent("android.intent.action.MAIN");
-                     i.setComponent(ComponentName.unflattenFromString("com.android.chrome/com.android.chrome.Main"));
-                     i.addCategory("android.intent.category.LAUNCHER");
-                     i.setData(Uri.parse(recipe.url));
-                     v.getContext().startActivity(i);
-                       */
 
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(recipe.url));
                     v.getContext().startActivity(browserIntent);

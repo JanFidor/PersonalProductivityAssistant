@@ -35,13 +35,22 @@
         <item name="android:background">@color/background_dark</item>
     </style>
 
-    <!-- DropDown Menu Theme -->
-    <style name="Dropdown">
+    <!-- Spinner Menu Theme -->
+    <style name="Spinner">
         <item name="android:textColorPrimary">@color/text_dark</item>
         <item name="android:textColorSecondary">@color/colorAccent</item>
         <item name="android:textSize">18sp</item>
         <item name="android:background">@color/background_dark</item>
     </style>
+
+    <!-- DropDown Menu Theme -->
+    <style name="Dropdown">
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@color/background_dark</item>
+    </style>
+
 
     <!-- Default TextView Theme -->
     <style name="Text">
@@ -51,9 +60,7 @@
         <item name="android:textColorPrimary">@color/text_dark</item>
         <item name="android:textColorSecondary">@color/colorAccent</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:textStyle">bold</item>
         <item name="android:background">@android:color/transparent</item>
-        <item name="android:padding">5sp</item>
     </style>
 
     <!-- Default Button Theme -->

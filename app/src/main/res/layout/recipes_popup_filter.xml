@@ -1,81 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:cardCornerRadius="10dp"
-    app:cardBackgroundColor="@android:color/transparent"
-    app:cardUseCompatPadding="true"
-    >
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:gravity="center"
+    android:backgroundTint="@android:color/transparent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardUseCompatPadding="true"
+        android:clickable="true"
+        >
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/background_dark"
-        android:padding="10dp">
-
-        <TextView
-            android:id="@+id/FilterText"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:theme="@style/Text"
-            android:text="@string/Filter"
-            />
+            android:background="@color/background_dark"
+            android:padding="10dp">
 
-        <TextView
-            android:id="@+id/TasteText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/FilterText"
-            android:layout_alignParentStart="true"
-            android:theme="@style/Text"
-            android:text="@string/Taste"
-            />
+            <TextView
+                android:id="@+id/FilterText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:theme="@style/Text"
+                android:text="@string/Filter"
+                />
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/TasteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/FilterText"
+                android:layout_alignParentStart="true"
+                android:theme="@style/Text"
+                android:text="@string/Taste"
+                />
 
-            android:id="@+id/spinner_taste"
-            android:theme="@style/Dropdown"
-            android:layout_marginEnd="20sp"
-            android:paddingTop="8sp"
-            android:paddingBottom="20sp"
-            android:dropDownWidth="70sp"
-            android:layout_below="@+id/FilterText"
-            android:layout_alignParentEnd="true"
-            android:entries="@array/tastes"
-            />
-        <TextView
-            android:id="@+id/TypeText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/TasteText"
-            android:layout_alignParentStart="true"
-            android:theme="@style/Text"
-            android:text="@string/Type"
-            />
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        <Spinner
-            android:id="@+id/spinner_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20sp"
-            android:paddingTop="8sp"
-            android:paddingBottom="20sp"
-            android:dropDownWidth="70sp"
-            android:theme="@style/Dropdown"
+                android:id="@+id/spinner_taste"
+                android:theme="@style/Dropdown"
+                android:layout_marginEnd="20sp"
+                android:paddingTop="8sp"
+                android:paddingBottom="20sp"
+                android:dropDownWidth="70sp"
+                android:layout_below="@+id/FilterText"
+                android:layout_alignParentEnd="true"
+                android:entries="@array/tastes"
+                />
+            <TextView
+                android:id="@+id/TypeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TasteText"
+                android:layout_alignParentStart="true"
+                android:theme="@style/Text"
+                android:text="@string/Type"
+                />
 
-            android:layout_below="@+id/spinner_taste"
-            android:layout_alignParentEnd="true"
-            android:entries="@array/types"
-            />
+            <Spinner
+                android:id="@+id/spinner_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20sp"
+                android:paddingTop="8sp"
+                android:paddingBottom="20sp"
+                android:dropDownWidth="70sp"
+                android:theme="@style/Dropdown"
+
+                android:layout_below="@+id/spinner_taste"
+                android:layout_alignParentEnd="true"
+                android:entries="@array/types"
+                />
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

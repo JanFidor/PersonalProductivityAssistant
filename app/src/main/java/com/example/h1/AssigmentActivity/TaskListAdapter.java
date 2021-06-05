@@ -23,9 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.NoteViewHolder> {
-
-
-
     public static class NoteViewHolder extends RecyclerView.ViewHolder{
         private Context context;
 
@@ -57,7 +54,6 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.NoteVi
                     Toast.makeText(containerView.getContext(), message, Toast.LENGTH_SHORT).show();
                 }
             });
-
 
             // pop up window for deleting task
             containerView.setOnLongClickListener(new View.OnLongClickListener() {

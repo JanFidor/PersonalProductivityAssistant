@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import com.example.h1.PopupFactory;
 import com.example.h1.R;
 import com.example.h1.RecipeActivity.RecipeDB.Recipe;
 import com.example.h1.RecipeActivity.RecipeDB.RecipesDB;
@@ -66,92 +67,19 @@ public class RecipeList extends AppCompatActivity {
         settingButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                final AlertDialog dialogBuilder = new AlertDialog.Builder(RecipeList.this).create();
-                LayoutInflater inflater = RecipeList.this.getLayoutInflater();
-                View dialogView = inflater.inflate(R.layout.recipes_popup_filter, null);
 
-                final Spinner spinnerTaste = dialogView.findViewById(R.id.spinner_taste);
-                final Spinner spinnerType = dialogView.findViewById(R.id.spinner_type);
+                PopupFactory popupFactory = new PopupFactory();
+                popupFactory.getPopup("RecipesFilter", v, - 1);
 
-                dialogBuilder.setView(dialogView);
-                dialogBuilder.getWindow().getDecorView().setBackgroundResource(android.R.color.transparent);
-                dialogBuilder.getWindow().setDimAmount(0.0f);
-
-
-                dialogBuilder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        String taste = spinnerTaste.getSelectedItem().toString();
-                        String type = spinnerType.getSelectedItem().toString();
-
-                        /*Log.e("values", taste + ' ' + type);
-                        Type = Values.getTaste(taste);
-                        Taste = Values.getType(type);
-
-                        Log.e("inside", String.valueOf(tasteV) + ' ' + String.valueOf(typeV));
-                        spinnerTaste.setSelection(tasteV);
-                        spinnerType.setSelection(typeV);
-
-                        database.recipeDAO().updateFilter("Filter", tasteV, typeV);
-                        */    // again old shit
-
-                        Taste = Values.getTaste(taste, RecipeList.this);
-                        Type = Values.getType(type, RecipeList.this);
-                        dialogBuilder.dismiss();
-                        adapter.reload(Taste, Type);
-
-                    }
-                });
-
-                dialogBuilder.show();
-
-
-                //dialogBuilder.show();
             }
         });
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                final AlertDialog recipeBuilder = new AlertDialog.Builder(RecipeList.this).create();
-                LayoutInflater inflater = RecipeList.this.getLayoutInflater();
-                View dialogView = inflater.inflate(R.layout.recipes_popup_create, null);
-
-                final EditText editTextName = dialogView.findViewById(R.id.recipe_make_name);
-                final EditText editTextUrl = dialogView.findViewById(R.id.recipe_make_url);
-                final Spinner spinnerTasteAdd = dialogView.findViewById(R.id.spinner_taste);
-                final Spinner spinnerTypeAdd = dialogView.findViewById(R.id.spinner_type);
-                final Spinner spinnerTimeAdd = dialogView.findViewById(R.id.spinner_time);
-                final Button buttonAdd = dialogView.findViewById(R.id.recipe_add);
-                // TODO assign values to a hashmap
-
-                recipeBuilder.setView(dialogView);
-
-                recipeBuilder.getWindow().getDecorView().setBackgroundResource(android.R.color.transparent);
-                recipeBuilder.getWindow().setDimAmount(0.0f);
-
-
-                buttonAdd.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String name = editTextName.getText().toString();
-                        String url = editTextUrl.getText().toString();
-                        String taste = spinnerTasteAdd.getSelectedItem().toString();
-                        String type = spinnerTypeAdd.getSelectedItem().toString();
-                        String time = spinnerTimeAdd.getSelectedItem().toString();
-
-                        int tasteID = Values.getTaste(taste, RecipeList.this);
-                        int typeID = Values.getType(type, RecipeList.this);
-                        int timeID = Values.getTime(time, RecipeList.this);
-
-                        RecipeList.database.recipeDAO().add(name, tasteID, typeID, timeID, url);
-                        recipeBuilder.dismiss();
-                        adapter.reload(Taste, Type);
-                    }
-                });
-
-                recipeBuilder.show();
+            public void onClick(View v) {
+                PopupFactory popupFactory = new PopupFactory();
+                popupFactory.getPopup("RecipesCreate", v, -1);
             }
         });
     }
